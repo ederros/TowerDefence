@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a34b97560458d0b49a6ad2eee2cde96c, type: 3}
+  m_Name: SpawnerTower
+  m_EditorClassIdentifier: 
+  cost: 150
+  prefab: {fileID: 6798053088230831036, guid: 1b2db2fa2ef445242bbfc38efdd5d3ac, type: 3}
+  _cooldown: 8
+  description: Spawns minions to attack enemies
