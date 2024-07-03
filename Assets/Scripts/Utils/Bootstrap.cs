@@ -9,5 +9,8 @@ public class Bootstrap : MonoBehaviour
     {
         Money.InitPlayerMoney();
         Money.PlayerMoney.Add(startMoney);
+        #if UNITY_EDITOR
+        Money.PlayerMoney.Add(10000);
+        #endif
     }
 }

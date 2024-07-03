@@ -7,14 +7,15 @@ public class NewTowerSelector : MonoBehaviour
 
     public BuyableSelectorScriptable tower;
     [SerializeField] private Transform viewTarget;
-    [SerializeField] private Transform content;
     [SerializeField] private TowerBuySelector selectorPrefab;
     [SerializeField] private float towerViewScale = 300;
     [SerializeField] private TMP_Text text;
+    private Transform _content;
     private Action action;
     public Transform GetViewTarget() => viewTarget;
-    public void Init(BuyableSelectorScriptable tower, Action action)
+    public void Init(BuyableSelectorScriptable tower, Transform targetContent, Action action)
     {
+        _content = targetContent;
         gameObject.SetActive(true);
         this.tower = tower;
         this.action = action;
@@ -40,6 +41,6 @@ public class NewTowerSelector : MonoBehaviour
     public void Clicked()
     {
         action?.Invoke();
-        Instantiate(selectorPrefab, content).SetTower(tower);
+        Instantiate(selectorPrefab, _content).SetTower(tower);
     }
 }

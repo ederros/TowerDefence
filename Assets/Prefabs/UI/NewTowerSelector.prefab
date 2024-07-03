@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7867822117134887277}
   - component: {fileID: 7353926135491128182}
   - component: {fileID: 8693109377894995718}
+  - component: {fileID: 4095283171795820171}
   m_Layer: 5
   m_Name: NewTowerSelector
   m_TagString: Untagged
@@ -104,6 +105,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 4095283171795820171}
+        m_TargetAssemblyTypeName: PauseViewCloser, Assembly-CSharp
+        m_MethodName: Destroy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8693109377894995718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,10 +131,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tower: {fileID: 0}
   viewTarget: {fileID: 7707414700409569485}
-  content: {fileID: 0}
   selectorPrefab: {fileID: 7171082987408974426, guid: 55ceabfdb747082428c7390ed56c3fdc, type: 3}
   towerViewScale: 300
   text: {fileID: 2642649514601763606}
+--- !u!114 &4095283171795820171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353024308537670045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e1a0f3c0a76a8148afa0d95f1055b9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _object: {fileID: 0}
+  _pauseStateAfterDestroy: 0
 --- !u!1 &678827159194759193
 GameObject:
   m_ObjectHideFlags: 0

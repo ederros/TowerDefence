@@ -87,7 +87,7 @@ PrefabInstance:
     - target: {fileID: 5348842165635441955, guid: c287a89ff2a901a4bbe30c9d0709f900, type: 3}
       propertyPath: _movement
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: -6131715617457358412}
     - target: {fileID: 6269576380574545946, guid: c287a89ff2a901a4bbe30c9d0709f900, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -179,9 +179,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 238cf9ac10842d84c896de298fb60c38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  myRB: {fileID: 1062536220999393211}
-  speed: 1
+  _target: {fileID: 0}
+  _myRigidBody: {fileID: 1062536220999393211}
+  _speed: 1
   distanceToLinear: 2
   offset: {x: 0, y: -10}
   timeToUnBurrow: 15

@@ -11,6 +11,6 @@ public class SafeAreaFitter : MonoBehaviour
         transform.position += Vector3.down * offset;
     }
     private void Update() {
-        Debug.Log(Screen.height + " " + Screen.safeArea.height);
+        //Debug.Log(Screen.height + " " + Screen.safeArea.height);
     }
 }

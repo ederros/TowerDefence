@@ -80,6 +80,10 @@ PrefabInstance:
       propertyPath: speed
       value: 0.24
       objectReference: {fileID: 0}
+    - target: {fileID: 7039579917452175323, guid: 9fa7aa9bac1bedc46955e331a50f4738, type: 3}
+      propertyPath: _speed
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7097680094640723675, guid: 9fa7aa9bac1bedc46955e331a50f4738, type: 3}
       propertyPath: moneyAddCount
       value: 5

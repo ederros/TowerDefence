@@ -65,8 +65,8 @@ MonoBehaviour:
   buyableSelector: {fileID: 11400000, guid: dab7501adc9e1ab4f8c631eb9ce35ca0, type: 2}
   text: {fileID: 6995086616828126116}
   viewTarget: {fileID: 1680868305491958172}
-  tapDuration: 0.1
   cooldown: {fileID: 609975370323887601}
+  _imageScale: 180
 --- !u!114 &609975370323887601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,9 +297,9 @@ RectTransform:
   m_Father: {fileID: 1803087353822771026}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0.0000076293945, y: 11.637001}
-  m_SizeDelta: {x: 0.000015259, y: 23.2738}
+  m_AnchorMax: {x: 1, y: 0.25}
+  m_AnchoredPosition: {x: 0.0000076293945, y: 0.000045776367}
+  m_SizeDelta: {x: 0, y: -0.00012207}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &321621444170431064
 CanvasRenderer:
@@ -356,7 +356,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 41.6
+  m_fontSize: 33.55
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

@@ -8,7 +8,7 @@ public class BurrowedEnemyMovement : EnemyMovement
     [SerializeField] float timeToUnBurrow = 5;
     [SerializeField] float unburrowedSpeed = 5;
     
-    protected override Vector2 GetTargetPosition() => (Vector2)target.position + offset;
+    protected override Vector2 GetTargetPosition() => (Vector2)_target.position + offset;
 
     public event System.Action UnBurrow;
     private float startTime;
@@ -41,7 +41,7 @@ public class BurrowedEnemyMovement : EnemyMovement
         base.Update();
         if(Time.time > startTime + timeToUnBurrow)
         {
-            speed = unburrowedSpeed;
+            _speed = unburrowedSpeed;
             UnBurrow?.Invoke();
             foreach (Collider2D item in myColliders)
             {

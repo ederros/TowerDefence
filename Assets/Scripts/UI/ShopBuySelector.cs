@@ -50,7 +50,7 @@ public class ShopBuySelector : MonoBehaviour
     public void Buy()
     {
         if(!money.TrySub(price)) return;
-        NewTowerManager.Instance.AddToPool(buyableSelector);
+        NewTowerEnabler.Instance.TowerPool.AddToPool(buyableSelector);
         BuyEvent?.Invoke();
         Destroy(this.gameObject);
     }

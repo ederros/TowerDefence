@@ -502,6 +502,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5420263700482927216, guid: a18dba95b7d1bee4094b37c2de28f91f, type: 3}
+      propertyPath: _value
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420263700482927216, guid: a18dba95b7d1bee4094b37c2de28f91f, type: 3}
+      propertyPath: _maxValue
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7794761930586535902, guid: a18dba95b7d1bee4094b37c2de28f91f, type: 3}
       propertyPath: m_Name
       value: Eat Tower 1
@@ -595,7 +603,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damagePerTick: 1
-  tickTime: 3
+  tickTime: 2
   goldPerKill: 5
 --- !u!58 &1831374648297488932
 CircleCollider2D:

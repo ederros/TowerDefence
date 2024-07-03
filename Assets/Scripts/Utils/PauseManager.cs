@@ -16,4 +16,10 @@ public static class PauseManager
         Time.timeScale = 1;
         isPaused = false;
     }
+
+    public static void SetPause(bool isPaused)
+    {
+        if(isPaused) Pause();
+        else UnPause();
+    }
 }

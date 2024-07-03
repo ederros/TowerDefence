@@ -10,12 +10,14 @@ public class WaveCreator : MonoBehaviour
         public Enemy enemy;
         public int cost;
         public float minDifficult;
+        public float maxDifficult;
     }
-    [SerializeField] List<EnemyCost> enemyPool;
-    [SerializeField] float timeToWaveModifier = 10;
-    [SerializeField] int enemyPowerModifier = 1;
+    [SerializeField] private List<EnemyCost> enemyPool;
+    [SerializeField] private float timeToWaveModifier = 10;
+    [SerializeField] private int enemyPowerModifier = 1;
     
-    
+    private const int MAX_ITERATONS = 10;
+    private const int MAX_RANDOM_GROUP = 3;
     public Wave CreateWave(int difficulty)
     {
         Wave wave = new Wave();
@@ -33,30 +35,27 @@ public class WaveCreator : MonoBehaviour
             {
                 
                 int enemy = Random.Range(0, enemyPool.Count);
-                while(enemyPool[enemy].minDifficult > difficulty)
+                while(enemyPool[enemy].minDifficult > difficulty || (enemyPool[enemy].maxDifficult < difficulty && enemyPool[enemy].maxDifficult != 0))
                     enemy = Random.Range(0, enemyPool.Count);
                 debuge++;
                 
                 group.count = credits/enemyPool[enemy].cost;
-                if(group.count>0)
+                if(group.count > 0)
                 {
-                    group.count = Random.Range(1, group.count+1);
-                    group.count = Random.Range(1, group.count+1);
-                    group.count = Random.Range(1, group.count+1);
+                    for(int i = 0; i < MAX_RANDOM_GROUP; i++)
+                        group.count = Random.Range(1, group.count+1);
                 }
                 
                 cost = enemyPool[enemy].cost * group.count;
                 
                 group.enemy = enemyPool[enemy].enemy;
                
-                if(debuge > 100) break;
+                if(debuge > MAX_ITERATONS) break;
             }
             credits -= cost;
-            if(debuge > 100) break;
+            if(debuge > MAX_ITERATONS) break;
             wave.groups.Add(group);
-        }
-        if(debuge > 100) return null;
-        
+        }        
         
         return wave;
     }

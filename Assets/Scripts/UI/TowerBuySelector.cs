@@ -9,11 +9,10 @@ public class TowerBuySelector : MonoBehaviour
     [SerializeField] BuyableSelectorScriptable buyableSelector;
     [SerializeField] TMP_Text text;
     [SerializeField] Transform viewTarget;
-    [SerializeField] float tapDuration = 0.1f;
     [SerializeField] Cooldown cooldown;
-
+    [SerializeField] float _imageScale = 150;
     bool isInited = false;
-    public void SetTower(BuyableSelectorScriptable buyableSelector, float scale = 150)
+    public void SetTower(BuyableSelectorScriptable buyableSelector)
     {
         this.buyableSelector = buyableSelector;
         text.text = buyableSelector.Cost.ToString();
@@ -23,7 +22,7 @@ public class TowerBuySelector : MonoBehaviour
             Transform t = Instantiate(view, viewTarget);
             GameObject go = t.gameObject;
             SpriteToImage(t);
-            go.GetComponent<RectTransform>().localScale *= scale;
+            go.GetComponent<RectTransform>().localScale *= _imageScale;
         }
         isInited = true;
     }

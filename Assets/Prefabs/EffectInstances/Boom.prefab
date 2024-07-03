@@ -93,8 +93,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4089994847685411082}
-  - component: {fileID: 8410837537076042014}
   - component: {fileID: 3455350973690895150}
+  - component: {fileID: 4465651055614016561}
   m_Layer: 0
   m_Name: Boom
   m_TagString: Untagged
@@ -118,18 +118,6 @@ Transform:
   - {fileID: 2916273713572889311}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8410837537076042014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4786050483087354494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2fb33b446e16104b84e3d720a2f3ead, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &3455350973690895150
 Animator:
   serializedVersion: 5
@@ -151,3 +139,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4465651055614016561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4786050483087354494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 634937c74af3c76438effcf6be769459, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _object: {fileID: 4786050483087354494}

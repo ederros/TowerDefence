@@ -34,6 +34,7 @@ public class EntityHealth : MonoBehaviour, IDamageReceiver
 
     public void ReceiveDamage(float value)
     {
+        if(value < 0) value = 0;
         Value -= value;
     }
 

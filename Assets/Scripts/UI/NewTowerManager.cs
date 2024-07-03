@@ -1,59 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class NewTowerManager : MonoBehaviour
 {
-    [SerializeField] List<BuyableSelectorScriptable> towers;
     [SerializeField] List<NewTowerSelector> selectors;
-    public List<BuyableSelectorScriptable> Towers => towers;
-    private static NewTowerManager instance;
-    public static NewTowerManager Instance => instance;
 
-    public void Init()
+    public void Init(Transform content, TowersPool pool) 
     {
-        instance = this;
-    }
-    public void AddToPool(BuyableSelectorScriptable tower)
-    {
-        if(!towers.Contains(tower))
-            towers.Add(tower);
-    }
-    
-    private void OnEnable() 
-    {
-        Time.timeScale = 0;
-        int freeSpace = selectors.Count;
-        int freeTowers = towers.Count;
-        foreach (NewTowerSelector item in selectors)
+        PauseManager.Pause();
+        BuyableSelectorScriptable[] towers = pool.GetRandomTowers(selectors.Count);
+        for(int i = 0; i < towers.Length; i++)
         {
-            BuyableSelectorScriptable buyable = null;
-            for(int i = towers.Count - freeTowers; i < towers.Count; i++)
-            {
-                int c = Random.Range(0, freeTowers);
-                freeTowers--;
-                if(c < freeSpace) 
-                {
-                    buyable = towers[i];
-                    break;
-                }
-                
-            }
-            item.Init(buyable, () =>
-            {
-                towers.Remove(buyable);
-                Time.timeScale = 1;
-                gameObject.SetActive(false);
-                foreach (NewTowerSelector it in selectors)
-                {
-                    foreach(Transform c in it.GetViewTarget())
-                    {
-                        
-                        Destroy(c.gameObject);
-                    }
-                }
-            });
-            freeSpace--;
+            BuyableSelectorScriptable tower = towers[i];
+            selectors[i].Init(tower, content, () => pool.RemoveFromPool(tower));
         }
     }
 }

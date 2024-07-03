@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: speed
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 999681195234990150, guid: c287a89ff2a901a4bbe30c9d0709f900, type: 3}
+      propertyPath: _speed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1075812839970613574, guid: c287a89ff2a901a4bbe30c9d0709f900, type: 3}
       propertyPath: moneyAddCount
       value: 5

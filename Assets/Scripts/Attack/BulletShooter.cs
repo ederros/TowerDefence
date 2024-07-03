@@ -10,7 +10,6 @@ public abstract class BulletShooter : Attack
     
     protected void SpawnBullet(Vector2 dir)
     {
-
         Instantiate(bulletPrefab, transform.position, Quaternion.identity).Init(dir.normalized * bulletSpeed, Damage, this.gameObject, radius.radius / bulletSpeed);
     }
 

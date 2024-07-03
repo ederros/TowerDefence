@@ -5,6 +5,7 @@ public class ContactAttackTrigger : Attack
 {
     List<EntityHealth> entityHealths = new List<EntityHealth>();
     [SerializeField] LayerMask target;
+    
     public override void Punch()
     {
         entityHealths.RemoveAll((e) => e == null);
@@ -21,13 +22,13 @@ public class ContactAttackTrigger : Attack
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        if(((1<<other.attachedRigidbody.gameObject.layer) & target.value) == 0 || !other.attachedRigidbody.transform.TryGetComponent(out EntityHealth health)) return;
+        if(((1 << other.attachedRigidbody.gameObject.layer) & target.value) == 0 || !other.attachedRigidbody.transform.TryGetComponent(out EntityHealth health)) return;
         entityHealths.Add(health);
     }
 
     private void OnTriggerExit2D(Collider2D other) 
     {
-        if(!other.attachedRigidbody.transform.TryGetComponent(out EntityHealth health) || ((1<<other.attachedRigidbody.gameObject.layer) & target.value) == 0) return;
+        if(!other.attachedRigidbody.transform.TryGetComponent(out EntityHealth health) || ((1 << other.attachedRigidbody.gameObject.layer) & target.value) == 0) return;
         entityHealths.Remove(health);
     }
 }

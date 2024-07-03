@@ -19,4 +19,10 @@ public class HealthFadeout : MonoBehaviour
         };
     }
 
+    private void OnValidate() 
+    {
+        if(!setOnStart) return;
+        if(rend == null) return;
+        rend.color = gradient.Evaluate(0);
+    }
 }

@@ -5,15 +5,22 @@ using UnityEngine;
 
 public class PlayerScoreView : MonoBehaviour
 {
-    [SerializeField] private TMP_Text text;
-    [SerializeField] private PlayerScore score;
+    [SerializeField] private TMP_Text _text;
+    [SerializeField] private PlayerScore _score;
 
     private void Start() 
     {
-        score.scoreChanged += (int count) => 
+        if(_score != null)
+            Init(_score);
+    }
+
+    public void Init(PlayerScore score)
+    {
+        _score = score;
+        _score.scoreChanged += (int count) => 
         {
-            text.text = count.ToString();
+            _text.text = count.ToString();
         };
-        score.AddScore(0);
+        _score.AddScore(0);
     }
 }

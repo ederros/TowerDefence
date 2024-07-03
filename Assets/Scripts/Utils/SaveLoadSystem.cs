@@ -1,20 +1,14 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using UnityEngine;
-using System.Security.Cryptography;
 using System.Text;
-using System;
 
 
 public class SaveLoadSystem : MonoBehaviour
 {
-
     private readonly string Key = "1234567890";
    
-    
-
     public string EnDecrypt(string text)
     {
         StringBuilder sb = new StringBuilder();

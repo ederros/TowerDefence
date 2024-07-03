@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnemyTrigger : MonoBehaviour
 {
     [SerializeField] Enemy enemy;
-    [SerializeField, Range(0, 1)] float triggerChance = 0.5f; 
 
     Transform originTarget = null;
 

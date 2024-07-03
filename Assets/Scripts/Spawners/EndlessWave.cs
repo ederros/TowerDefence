@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EndlessWave : MonoBehaviour
@@ -21,7 +19,6 @@ public class EndlessWave : MonoBehaviour
             Enemy enemy;
             if(currentWave.TryPopRandomEnemy(out enemy))
             {
-                Debug.Log(target);
                 spawner.Spawn(enemy).SetTarget(target);
                 lastSpawnedEnemyTime = Time.time;
                 nextEnemySpawnTime = Random.Range(currentWave.minMaxSpawnTimeRange.x, currentWave.minMaxSpawnTimeRange.y);

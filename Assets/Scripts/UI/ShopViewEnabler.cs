@@ -2,11 +2,13 @@ using UnityEngine;
 
 public class ShopViewEnabler : MonoBehaviour
 {
-    [SerializeField] private ShopSelectorsManager _shopSelectorsManager;
+    [SerializeField] private ShopContent _objectPrefab;
+    [SerializeField] private ShopItemsManager _items;
+    [SerializeField] private PlayerScore _playerScore;
 
     public void Enable()
     {
-        Instantiate(_shopSelectorsManager, transform).Init();
+        Instantiate(_objectPrefab, transform).Init(_items, _playerScore);
         PauseManager.Pause();
     }
 }
