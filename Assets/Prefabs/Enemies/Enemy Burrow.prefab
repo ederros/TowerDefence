@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: scoreAddCount
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1923562717696469182, guid: c287a89ff2a901a4bbe30c9d0709f900, type: 3}
+      propertyPath: Layers.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 4050862930168848621, guid: c287a89ff2a901a4bbe30c9d0709f900, type: 3}
       propertyPath: m_Layer
       value: 11
@@ -140,6 +144,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8813231122058638795, guid: c287a89ff2a901a4bbe30c9d0709f900, type: 3}
+      propertyPath: _target.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9108158522346630961, guid: c287a89ff2a901a4bbe30c9d0709f900, type: 3}
       propertyPath: m_Name
       value: Enemy Burrow
@@ -162,6 +170,17 @@ Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 2358583343362347341, guid: c287a89ff2a901a4bbe30c9d0709f900, type: 3}
   m_PrefabInstance: {fileID: 3316263536856108790}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3797768156787254856 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1923562717696469182, guid: c287a89ff2a901a4bbe30c9d0709f900, type: 3}
+  m_PrefabInstance: {fileID: 3316263536856108790}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5792493296362807751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42bf46f5b9806314b995688b61c9cd83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5792493296362807751 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9108158522346630961, guid: c287a89ff2a901a4bbe30c9d0709f900, type: 3}
@@ -183,6 +202,7 @@ MonoBehaviour:
   _myRigidBody: {fileID: 1062536220999393211}
   _speed: 1
   distanceToLinear: 2
+  towers: {fileID: 3797768156787254856}
   offset: {x: 0, y: -10}
   timeToUnBurrow: 15
   unburrowedSpeed: 1

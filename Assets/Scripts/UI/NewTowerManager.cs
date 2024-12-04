@@ -14,7 +14,9 @@ public class NewTowerManager : MonoBehaviour
         for(int i = 0; i < towers.Length; i++)
         {
             BuyableSelectorScriptable tower = towers[i];
-            selectors[i].Init(tower, content, () => pool.RemoveFromPool(tower));
+            selectors[i].Init(tower, content, () => {
+                pool.RemoveFromPool(tower);
+            });
         }
     }
 }

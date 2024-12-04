@@ -10,8 +10,19 @@ public class TowerBuySelector : MonoBehaviour
     [SerializeField] TMP_Text text;
     [SerializeField] Transform viewTarget;
     [SerializeField] Cooldown cooldown;
+    
     [SerializeField] float _imageScale = 150;
+    [SerializeField] private Transform towersContainer;
+
     bool isInited = false;
+
+    public void Init(BuyableSelectorScriptable buyableSelector, Transform towersContainer)
+    {
+        SetTower(buyableSelector);
+        this.towersContainer = towersContainer;
+        isInited = true;
+    }
+    
     public void SetTower(BuyableSelectorScriptable buyableSelector)
     {
         this.buyableSelector = buyableSelector;
@@ -24,7 +35,7 @@ public class TowerBuySelector : MonoBehaviour
             SpriteToImage(t);
             go.GetComponent<RectTransform>().localScale *= _imageScale;
         }
-        isInited = true;
+        
     }
     
     private void Start() 
@@ -61,7 +72,7 @@ public class TowerBuySelector : MonoBehaviour
         if(GridTowerField.gridTowerField.CheckForTower(PlayerCircleMovement.PlayerMovement.transform.position)) return;
         if(!Money.PlayerMoney.TrySub(buyableSelector.Cost)) return;
         
-        GameObject tower = Instantiate(buyableSelector.Prefab, PlayerCircleMovement.PlayerMovement.transform.position, Quaternion.identity);
+        GameObject tower = Instantiate(buyableSelector.Prefab, PlayerCircleMovement.PlayerMovement.transform.position, Quaternion.identity, towersContainer);
         GridTowerField.gridTowerField.SetTower(PlayerCircleMovement.PlayerMovement.transform.position, tower);
         //PlayerCircleMovement.PlayerMovement.RandomDash();
         cooldown.StartCooldown();

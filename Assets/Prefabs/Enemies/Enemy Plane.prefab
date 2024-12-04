@@ -24,6 +24,10 @@ PrefabInstance:
       propertyPath: scoreAddCount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1923562717696469182, guid: c287a89ff2a901a4bbe30c9d0709f900, type: 3}
+      propertyPath: Layers.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 4190443811615956962, guid: c287a89ff2a901a4bbe30c9d0709f900, type: 3}
       propertyPath: value
       value: 2
@@ -87,6 +91,10 @@ PrefabInstance:
     - target: {fileID: 8518363256615934720, guid: c287a89ff2a901a4bbe30c9d0709f900, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8813231122058638795, guid: c287a89ff2a901a4bbe30c9d0709f900, type: 3}
+      propertyPath: _target.m_Bits
+      value: 320
       objectReference: {fileID: 0}
     - target: {fileID: 9108158522346630961, guid: c287a89ff2a901a4bbe30c9d0709f900, type: 3}
       propertyPath: m_Name

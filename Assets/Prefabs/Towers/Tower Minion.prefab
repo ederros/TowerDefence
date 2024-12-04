@@ -186,9 +186,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 0.5
   attackInterval: 1
-  target:
+  _target:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 0
 --- !u!114 &2071606522311528599
 MonoBehaviour:
   m_ObjectHideFlags: 0

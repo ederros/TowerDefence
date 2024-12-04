@@ -41,6 +41,6 @@ public class NewTowerSelector : MonoBehaviour
     public void Clicked()
     {
         action?.Invoke();
-        Instantiate(selectorPrefab, _content).SetTower(tower);
+        Instantiate(selectorPrefab, _content).Init(tower, NewTowerEnabler.Instance.TowersContainer);
     }
 }

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class TurretTargeter : MonoBehaviour
 {
-    [SerializeField] EnemyFinder finder;
+    [SerializeField] Finder finder;
     [SerializeField] private float rotationSpeed;
     [SerializeField] private Turret turret;
     [SerializeField] private float minTargetOffset;
@@ -13,18 +13,18 @@ public class TurretTargeter : MonoBehaviour
     
     private void Update() 
     {
-        if(finder.Enemies.Count <= 0) {
+        if(finder.Objects.Count <= 0) {
             lastSign = 0;
             isTargeted = false;
             return;
         }
         
-        if(finder.Enemies[0] == null)
+        if(finder.Objects[0] == null)
         {
             finder.CheckAndClean();
             return;
         }
-        Vector2 to = finder.Enemies[0].transform.position - transform.position;
+        Vector2 to = finder.Objects[0].transform.position - transform.position;
         float targAng = Mathf.Sign(turret.Head.up.x * to.y - turret.Head.up.y * to.x) * rotationSpeed * Time.deltaTime;
         
         isTargeted = Vector2.Angle(to, turret.Head.up) < minTargetOffset;

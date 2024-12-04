@@ -8,6 +8,8 @@ public class NewTowerEnabler : MonoBehaviour
     [SerializeField] private TowersPool _towerPool;
     [SerializeField] private Transform _playerSelectorsContent;
 
+    [SerializeField] public Transform TowersContainer;
+
     public static NewTowerEnabler Instance;
     private int _currentWave = 0;
 

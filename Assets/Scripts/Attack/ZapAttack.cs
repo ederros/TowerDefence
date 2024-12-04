@@ -6,7 +6,7 @@ public class ZapAttack : Attack
 {
     [SerializeField] private float _damageMultiplierPerZap = 0.8f;
     [SerializeField] private int _zapCount;
-    [SerializeField] private EnemyFinder _finder;
+    [SerializeField] private Finder _finder;
     [SerializeField] private LayerMask _enemyLayers;
     [SerializeField] private float _zapRadius;
 
@@ -15,16 +15,18 @@ public class ZapAttack : Attack
     /// Event describes from - to vectors
     /// </summary>
     public event System.Action<Vector3[]> Zapped;
-    public override bool Check() => _finder.Enemies.Count > 0;    
+    public override bool Check() => _finder.Objects.Count > 0;    
     public override void Punch()
     {
-        if(_finder.Enemies[0] == null) return;
+        if(_finder.Objects[0] == null) return;
+        if(!TryGetComponent(out Enemy target)) return;
+
         List<Vector3> positions = new List<Vector3>
         {
             transform.position,
-            _finder.Enemies[0].transform.position
+            target.transform.position
         };
-        _finder.Enemies[0].Health.ReceiveDamage(Damage);
+        target.Health.ReceiveDamage(Damage);
         float curDamage = Damage;
         int i = 1;
         for (; i < _zapCount; i++)

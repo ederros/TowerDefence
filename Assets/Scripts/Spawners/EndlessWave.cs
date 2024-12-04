@@ -12,24 +12,32 @@ public class EndlessWave : MonoBehaviour
     private float lastSpawnedEnemyTime;
     private float nextEnemySpawnTime;
     
+    void SetRandEnemyToSpawner()
+    {
+        Enemy enemy;
+        if(currentWave.TryPopRandomEnemy(out enemy))
+        {
+            var e = spawner.Spawn(enemy);
+            //Debug.Log(e);
+            e.SetTarget(target);
+            lastSpawnedEnemyTime = Time.time;
+            nextEnemySpawnTime = Random.Range(currentWave.minMaxSpawnTimeRange.x, currentWave.minMaxSpawnTimeRange.y);
+        }
+    }
+
+    void CreateNewWave()
+    {
+        currentWave = creator.CreateWave((int)difficulty);
+        difficulty *= difficultySpeed;
+        CurrentWaveChanged?.Invoke(difficulty);
+    }
+
     void Update()
     {
         if(currentWave != null && lastSpawnedEnemyTime + nextEnemySpawnTime < Time.time)
-        {
-            Enemy enemy;
-            if(currentWave.TryPopRandomEnemy(out enemy))
-            {
-                spawner.Spawn(enemy).SetTarget(target);
-                lastSpawnedEnemyTime = Time.time;
-                nextEnemySpawnTime = Random.Range(currentWave.minMaxSpawnTimeRange.x, currentWave.minMaxSpawnTimeRange.y);
-            }
-        }
+            SetRandEnemyToSpawner();
 
         if(currentWave == null || lastSpawnedEnemyTime + currentWave.timeToWave < Time.time)
-        {
-            currentWave = creator.CreateWave((int)difficulty);
-            difficulty *= difficultySpeed;
-            CurrentWaveChanged?.Invoke(difficulty);
-        }
+            CreateNewWave();
     }
 }

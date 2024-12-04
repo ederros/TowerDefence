@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7628838963556152746, guid: 9fa7aa9bac1bedc46955e331a50f4738, type: 3}
+      propertyPath: _target.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1299470497561546924, guid: 9fa7aa9bac1bedc46955e331a50f4738, type: 3}
       propertyPath: m_Name
       value: Enemy Tank
@@ -111,6 +115,10 @@ PrefabInstance:
     - target: {fileID: 7297001820112488159, guid: 9fa7aa9bac1bedc46955e331a50f4738, type: 3}
       propertyPath: gradient.m_NumAlphaKeys
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8565800838747969315, guid: 9fa7aa9bac1bedc46955e331a50f4738, type: 3}
+      propertyPath: Layers.m_Bits
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

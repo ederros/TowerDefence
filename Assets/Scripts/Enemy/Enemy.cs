@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
     public Death DeathHandler => _death;
     public EnemyMovement Movement => _movement;
     public EntityHealth Health => _health;
-
+    
     public void SetTarget(Transform target)
     {
         _movement.SetTarget(target);

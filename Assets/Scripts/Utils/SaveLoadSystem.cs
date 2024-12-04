@@ -97,7 +97,6 @@ public class SaveLoadSystem : MonoBehaviour
                 catch{
                     return false;
                 }
-                Debug.Log(list);
                 int ind = 0;
                 if(list.list.Count != saveLoadables.Count) return false;
                 foreach (var item in saveLoadables)

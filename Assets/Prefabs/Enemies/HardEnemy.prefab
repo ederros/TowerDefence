@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: -7628838963556152746}
   - component: {fileID: 7297001820112488159}
   - component: {fileID: 3805841206860578249}
+  - component: {fileID: -8385073179475272276}
+  - component: {fileID: 1909002385936815378}
   m_Layer: 7
   m_Name: HardEnemy
   m_TagString: Untagged
@@ -99,6 +101,7 @@ MonoBehaviour:
   _myRigidBody: {fileID: 5536427450829860560}
   _speed: 0.5
   distanceToLinear: 2
+  towers: {fileID: 1909002385936815378}
 --- !u!114 &7097680094640723675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,9 +132,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 1
   attackInterval: 1
-  target:
+  _target:
     serializedVersion: 2
-    m_Bits: 576
+    m_Bits: 0
 --- !u!114 &7297001820112488159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,6 +194,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _value: 20
   _maxValue: 20
+--- !u!114 &-8385073179475272276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299470497561546924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9153802e0ceac8441b1182a84c8e76c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1909002385936815378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299470497561546924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42bf46f5b9806314b995688b61c9cd83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Layers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &4281809316760536967
 GameObject:
   m_ObjectHideFlags: 0

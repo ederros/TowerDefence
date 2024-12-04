@@ -11,11 +11,6 @@ public class ZapView : MonoBehaviour
     {
         _attack.Zapped += (Vector3[] vectors) => 
         {
-            Debug.Log(vectors.Length);
-            for(int i = 0; i < vectors.Length; i++)
-            {
-                Debug.Log(vectors[i]);
-            }
             LineRenderer line = Instantiate(_zapPrefab);
             line.positionCount = vectors.Length;
             line.SetPositions(vectors);
